@@ -1,0 +1,110 @@
+correct_dependency_ids: {}
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {enable_v2: true}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true,
+    confirm_email: false, use_google: true, allow_remember_me: true, remember_me_days: 30}
+  server_config: {user_table: users}
+- source: /runtime/services/google.yml
+  client_config: {}
+  server_config: {}
+startup: {type: module, module: StartupModule}
+package_name: Material_Design_46
+allow_embedding: false
+name: Clone of Task Manager App
+runtime_options:
+  version: 2
+  client_version: '3'
+  server_version: python3-sandbox
+  server_spec: null
+  server_spec_disabled: {requirements: '', base: python310-minimal}
+metadata: {title: Task Manager App, description: A simple task management app demonstrating the Anvil Material 3 theme.}
+startup_form: null
+db_schema:
+  projects:
+    title: Projects
+    client: search
+    server: full
+    columns:
+    - name: project_name
+      admin_ui: {width: 200}
+      type: string
+    - name: columns
+      admin_ui: {width: 200}
+      type: link_multiple
+      target: columns
+  rows:
+    title: Rows
+    client: none
+    server: full
+    columns:
+    - name: project
+      admin_ui: {width: 200}
+      type: link_single
+      target: projects
+    - name: data
+      admin_ui: {width: 1165}
+      type: simpleObject
+  columns:
+    title: Columns
+    client: none
+    server: full
+    columns:
+    - name: title
+      admin_ui: {width: 200}
+      type: string
+    - name: type
+      admin_ui: {width: 200}
+      type: string
+  users:
+    title: Users
+    client: none
+    server: full
+    columns:
+    - name: email
+      admin_ui: {width: 200}
+      type: string
+    - name: enabled
+      admin_ui: {width: 200}
+      type: bool
+    - name: last_login
+      admin_ui: {width: 200}
+      type: datetime
+    - name: password_hash
+      admin_ui: {width: 159}
+      type: string
+    - name: n_password_failures
+      admin_ui: {width: 200}
+      type: number
+    - name: confirmed_email
+      admin_ui: {width: 200}
+      type: bool
+    - name: signed_up
+      admin_ui: {width: 200}
+      type: datetime
+    - name: color
+      admin_ui: {width: 200}
+      type: string
+    - name: remembered_logins
+      admin_ui: {width: 200}
+      type: simpleObject
+  comments:
+    title: Comments
+    client: none
+    server: full
+    columns:
+    - name: comment
+      admin_ui: {width: 200}
+      type: string
+    - name: user
+      admin_ui: {width: 200}
+      type: link_single
+      target: users
+    - name: project
+      admin_ui: {width: 200}
+      type: link_single
+      target: projects
+renamed: true

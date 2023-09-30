@@ -1,0 +1,75 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{"JCKHXH":10,"QSJNWU":50,"NFHQLH":10,"ESMYWD":5,"YLBQFW":35,"GTISAX":10,"LYLXIW":10,"CUXQFF":5,"TCXKJG":35,"XTVIHQ":10}'}
+components:
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_5
+  layout_properties: {grid_position: 'ULRDRV,JCKHXH'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Create New Column, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'ULRDRV,QSJNWU'}
+- type: Spacer
+  properties: {visible: true, spacing_above: small, spacing_below: small, height: '18',
+    tooltip: ''}
+  name: spacer_6
+  layout_properties: {grid_position: 'WYRJLG,SMBUSW'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_3
+  layout_properties: {grid_position: 'KXKYPY,NFHQLH'}
+- type: Label
+  properties: {role: input-prompt, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: 'Title:', font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_2
+  layout_properties: {grid_position: 'KXKYPY,ESMYWD'}
+- type: TextBox
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: title_text_box
+  layout_properties: {grid_position: 'KXKYPY,YLBQFW'}
+  event_bindings: {change: title_text_box_change}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_4
+  layout_properties: {grid_position: 'KXKYPY,GTISAX'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_2
+  layout_properties: {grid_position: 'MIZXMV,LYLXIW'}
+- type: Label
+  properties: {role: input-prompt, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: 'Type:', font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_3
+  layout_properties: {grid_position: 'MIZXMV,CUXQFF'}
+- type: DropDown
+  properties: {}
+  name: type_dropdown
+  layout_properties: {grid_position: 'MIZXMV,TCXKJG'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_1
+  layout_properties: {grid_position: 'MIZXMV,XTVIHQ'}
+- type: Spacer
+  properties: {height: 18}
+  name: spacer_7
+  layout_properties: {grid_position: 'KSVMRG,PCLYVA'}
+- type: Button
+  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Create, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: create_button
+  layout_properties: {grid_position: 'NPJHZP,LGHACZ'}
+  event_bindings: {click: create_button_click}
+is_package: true
